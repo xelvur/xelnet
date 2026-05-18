@@ -19,12 +19,13 @@ extern const char *GIT_SHORTREV_HASH;
 #define GAME_NETVERSION7 "0.7 802f1be60a05665f"
 
 // TClient
+// Xelnet
 #ifndef TCLIENT_VERSION
-#define TCLIENT_VERSION "10.8.7"
+#define TCLIENT_VERSION "0.0.1"
 #endif
 
 // custom
-#define CLIENT_NAME "TClient"
+#define CLIENT_NAME "Xelnet"
 #define CLIENT_RELEASE_VERSION TCLIENT_VERSION
 
 #endif
