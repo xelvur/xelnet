@@ -486,6 +486,15 @@ void CMenus::RenderSettingsTClientSettings(CUIRect MainView)
 	Column.HSplitTop(LineSize, &Button, &Column);
 	Ui()->DoScrollbarOption(&g_Config.m_TcCursorScale, &g_Config.m_TcCursorScale, &Button, TCLocalize("Ingame cursor scale"), 0, 500, &CUi::ms_LinearScrollbarScale, 0, "%");
 
+	DoButton_CheckBoxAutoVMarginAndSet(&g_Config.m_TcStretchEnable, TCLocalize("Stretch (custom aspect ratio)"), &g_Config.m_TcStretchEnable, &Column, LineSize);
+	if(g_Config.m_TcStretchEnable)
+	{
+		Column.HSplitTop(LineSize, &Button, &Column);
+		Ui()->DoScrollbarOption(&g_Config.m_TcStretchWidth, &g_Config.m_TcStretchWidth, &Button, TCLocalize("Stretch Width"), 1, 32, &CUi::ms_LinearScrollbarScale, 0, "");
+		Column.HSplitTop(LineSize, &Button, &Column);
+		Ui()->DoScrollbarOption(&g_Config.m_TcStretchHeight, &g_Config.m_TcStretchHeight, &Button, TCLocalize("Stretch Height"), 1, 32, &CUi::ms_LinearScrollbarScale, 0, "");
+	}
+
 	Column.HSplitTop(LineSize, &Button, &Column);
 	if(g_Config.m_TcAnimateWheelTime > 0)
 		Ui()->DoScrollbarOption(&g_Config.m_TcAnimateWheelTime, &g_Config.m_TcAnimateWheelTime, &Button, TCLocalize("Wheel animate"), 0, 1000, &CUi::ms_LinearScrollbarScale, 0, "ms");

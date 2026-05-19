@@ -1011,6 +1011,7 @@ private:
 	float CalculateMultiViewMultiplier(vec2 TargetPos);
 	float CalculateMultiViewZoom(vec2 MinPos, vec2 MaxPos, float Vel);
 	float MapValue(float MaxValue, float MinValue, float MaxRange, float MinRange, float Value);
+	float GetRenderAspect() const;
 
 	struct SMultiView
 	{
